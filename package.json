@@ -1,0 +1,16 @@
+{
+  "name": "cpf-crawler",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.40.0",
+    "mongoose": "^3.8.20",
+    "express": "^4.10.4"
+  }
+}
