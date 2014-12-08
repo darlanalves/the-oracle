@@ -165,8 +165,19 @@ server.listen(port, function() {
 });
 
 server.get('/profile/:id', function(request, response) {
+	var cpf = String(request.params.id || '');
+
+	if (cpf.length === 9) {
+		cpf = CPF.createDigits(cpf);
+	}
+
+	if (!cpf) {
+		response.sendStatus(400);
+		return;
+	}
+
 	Profile.findOne({
-		cpf: request.params.id
+		cpf: cpf
 	}, function(err, profile) {
 		if (err) {
 			response.sendStatus(500);
